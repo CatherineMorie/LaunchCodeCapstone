@@ -1,46 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org/">
 <head>
-    <style>
-    body {font-family: sans-serif;}
-    h1 {text-align: center;}
-    </style>
+    <link href="styles.css" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
     <title>Job Tracker</title>
 </head>
 <body>
-
-  <h1>Job Tracker</h1>
-  <p>This application will allow users to add jobs applied for and track the status throughout the application and
-      interview process. User will be able to search and view jobs by Company Name, Job Req Number or Job Status to
-      start.
-  </p>
-  <p>Stretch goal: Add login page to allow for different users to access platform and only show jobs added by the
-      validated user. Reformat for mobile use.
-  </p>
-  <br>
-  <div>Jobs will consist of the following information:</div>
-  <ul>
-      <li><strong>Company Name:</strong> Input</li>
-      <li><strong>Job Req Number:</strong> Input</li>
-      <li><strong>Position Title:</strong> Input</li>
-      <li><strong>Salary:</strong> Drop-down List</li>
-      <li><strong>Position Details:</strong> Text Area</li>
-      <li><strong>Date Applied:</strong> Date Control</li>
-      <li>How Applied: Input with Dropdown</li>
-      <li><strong>Job Status:</strong> Radio Buttons - Applied, Interview, Offer Accepted, Declined, No Longer in
-          Consideration</li>
-      <li><strong>User notes:</strong> Text Area</li>
-    </ul>
-  <br>
-  <p>Reason for Creation:<br>
-      There are numerous applications that allow users to search for and apply to positions including Indeed,
-      CareerBuilder and LinkedIn. None of these allow the user to manage applications outside of their platform.<br>
-      This allows users to track all known information in one place as well as keep their own notes and thoughts on a
-      specific position in one place.<br>
-      - Speak with the hiring manager and really love their personality?<br>
-      - Get a dismissive brushoff from the Tech Leads or HR that makes you second guess moving forward?<br>
-      These are all things you can note for comparing opportunities as you move through the process.
-  </p>
+<div class="header">
+    <h1>Job Tracker</h1>
+    <a href="/about">About</a>
+    <a href="/new">Enter New Job</a>
+    <a href="/search">Search My Jobs</a>
+</div>
+<p>This application will allow users to add jobs applied for and track the status throughout the application and
+    interview process. User will be able to search and view jobs by Company Name, Job Req Number or Job Status to
+    start.
+</p>
+<p>Stretch goal: Add login page to allow for different users to access platform and only show jobs added by the
+    validated user. Reformat for mobile use.
+</p>
+<br/>
+<div>Jobs will consist of the following information:</div>
+<ul>
+    <li>Company Name</li>
+    <li>Job Req Number</li>
+    <li>Position Title</li>
+    <li>Salary</li>
+    <li>Position Details</li>
+    <li>Date Applied</li>
+    <li>How Applied</li>
+    <li>Job Status</li>
+    <li>User Notes</li>
+</ul>
+<br/>
+<p>Reason for Creation:<br>
+    There are numerous applications that allow users to search for and apply to positions including Indeed,
+    CareerBuilder and LinkedIn. None of these allow the user to manage applications outside of their platform.<br>
+    This allows users to track all known information in one place as well as keep their own notes and thoughts on a
+    specific position in one place.<br>
+    - Speak with the hiring manager and really love their personality?<br>
+    - Get a dismissive brushoff from the Tech Leads or HR that makes you second guess moving forward?<br>
+    These are all things you can note for comparing opportunities as you move through the process.
+</p>
 </body>
 </html>
