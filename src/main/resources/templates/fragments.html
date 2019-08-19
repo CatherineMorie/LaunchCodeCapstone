@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org/">
-<head>
-    <link href="styles.css" rel="stylesheet" type="text/css">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <link rel="stylesheet" media="all" type="text/css" th:href="@{/css/styles.css}" />
     <meta charset="UTF-8">
     <title>Job Tracker</title>
 </head>
 <body>
-<div class="header">
+
+<div th:fragment="page-header" class="header">
     <h1>Job Tracker</h1>
     <a href="/about">About</a>
     <a href="/new">Enter New Job</a>
     <a href="/search">Search My Jobs</a>
 </div>
+
 
 </body>
 </html>

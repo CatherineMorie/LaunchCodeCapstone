@@ -1,17 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org/">
-<head>
-    <link href="styles.css" rel="stylesheet" type="text/css">
-    <meta charset="UTF-8">
-    <title>Job Tracker</title>
-</head>
+<head th:replace="fragments :: head"></head>
 <body>
-<div class="header">
-    <h1>Job Tracker</h1>
-    <a href="/about">About</a>
-    <a href="/new">Enter New Job</a>
-    <a href="/search">Search My Jobs</a>
-</div>
+<div th:replace="fragments :: page-header"></div>
 <h1>Enter New Position Details:</h1>
 <form action="/jobs/new" method="post">
     Date Applied: <input name="jobDateApplied" type="date"/>

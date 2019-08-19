@@ -1,17 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org/">
-<head>
-    <link href="styles.css" rel="stylesheet" type="text/css">
-    <meta charset="UTF-8">
-    <title>Job Tracker</title>
-</head>
+<head th:replace="fragments :: head"></head>
 <body>
-<div class="header">
-    <h1>Job Tracker</h1>
-    <a href="/about">About</a>
-    <a href="/new">Enter New Job</a>
-    <a href="/search">Search My Jobs</a>
-</div>
+<div th:replace="fragments :: page-header"></div>
 <p>This application will allow users to add jobs applied for and track the status throughout the application and
     interview process. User will be able to search and view jobs by Company Name, Job Req Number or Job Status to
     start.
