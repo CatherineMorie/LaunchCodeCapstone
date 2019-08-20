@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title></title>
-</head>
+<head th:replace="fragments :: head"></head>
 <body>
+<div th:replace="fragments :: page-header"></div>
+
+<img src="/images/underConstruction.jpg" alt="This Page Is Currently Under Construction!" class="underConstruction"/>
 
 </body>
 </html>
