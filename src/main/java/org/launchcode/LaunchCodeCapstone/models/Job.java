@@ -1,6 +1,26 @@
 package org.launchcode.LaunchCodeCapstone.models;
 
 public class Job {
+    private String dateApplied;
+    private String companyName;
+    private String positionTitle;
+    private String jobReqNumber;
+    private int salary;
+    private String jobStatus;
+    //below items not yet included (stretch)
+   /* private String positionDetails;
+    private String userNotes; */
+
+    public Job(String dateApplied, String companyName, String positionTitle, String jobReqNumber, int salary,
+               String jobStatus) {
+        this.dateApplied = dateApplied;
+        this.companyName = companyName;
+        this.positionTitle = positionTitle;
+        this.jobReqNumber = jobReqNumber;
+        this.salary = salary;
+        this.jobStatus = jobStatus;
+    }
+
     public String getDateApplied() {
         return dateApplied;
     }
@@ -49,22 +69,4 @@ public class Job {
         this.jobStatus = jobStatus;
     }
 
-    private String dateApplied;
-    private String companyName;
-    private String positionTitle;
-    private String jobReqNumber;
-    private int salary;
-    private String jobStatus;
-    //below items not yet included (stretch)
-   /* private String positionDetails;
-    private String userNotes; */
-
-    public Job(String dateApplied, String companyName, String positionTitle, String jobReqNumber, int salary,
-               String jobStatus) {
-        this.dateApplied = dateApplied;
-        this.companyName = companyName;
-        this.positionTitle = positionTitle;
-        this.jobReqNumber = jobReqNumber;
-        this.salary = salary;
-    }
 }
