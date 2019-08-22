@@ -1,7 +1,26 @@
-body {font-family: sans-serif;}
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
 
-.header {text-align: center;}
+.header {
+  text-align: center;
+}
 
-.underConstruction {  display: block;
-                      margin: 0 auto;
-                      width: 50%}
+table.center {
+  margin-left:auto;
+  margin-right:auto;
+  text-align: left;
+}
+
+div.center {
+  justify-content: center;
+  display: flex;
+  text-align: left;
+}
+
+.underConstruction {
+  display: block;
+  margin: 0 auto;
+  width: 50%
+  }
