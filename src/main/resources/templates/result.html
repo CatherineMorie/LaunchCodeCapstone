@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<div th:replace="fragments :: page-header"></div>
+
+<h2>Successfully Added New Job At <span th:text="${companyName}" />!</h2>
+<p>Number of jobs currently in the system: <span th:text="${count}" />.</p>
+
+<table>
+    <tr>
+        <td>Date Applied: </td>
+        <td th:text="${dateApplied}"></td>
+    </tr>
+    <tr>
+        <td>Company Name: </td>
+        <td th:text="${companyName}"></td>
+    </tr>
+    <tr>
+        <td>Position Title: </td>
+        <td th:text="${jobTitle}"></td>
+    </tr>
+    <tr>
+        <td>Job Req Number: </td>
+        <td th:text="${jobReqNumber}"></td>
+    </tr>
+    <tr>
+        <td>Salary: </td>
+        <td th:text="${salary}"></td>
+    </tr>
+    <tr>
+        <td>Job Status: </td>
+        <td th:text="${jobStatus}"></td>
+    </tr>
+</table>
+</body>
+</html>

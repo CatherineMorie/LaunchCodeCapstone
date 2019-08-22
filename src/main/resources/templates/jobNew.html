@@ -4,35 +4,48 @@
 <body>
 <div th:replace="fragments :: page-header"></div>
 <h1>Enter New Position Details:</h1>
-<form action="/jobs/new" method="post">
-    Date Applied: <input name="jobDateApplied" type="date"/>
+<form action="/addJob" method="POST">
+    <table>
+        <tr>
+            <td>Date Applied: </td>
+            <td><input name="dateApplied" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Company Name: </td>
+            <td><input name="companyName" type="text"/></td>
+        </tr>
+        <tr>
+            <td>Position Title: </td>
+            <td><input name="jobTitle" type="text"/></td>
+        </tr>
+        <tr>
+            <td>Job Req Number: </td>
+            <td><input name="jobReqNumber" type="text"/></td>
+        </tr>
+        <tr>
+            <td>Salary: </td>
+            <td><input name="salary" type="text"/></td>
+        </tr>
+        <tr>
+            <td>Job Status: </td>
+            <td><input name="jobStatus" type="radio" id="applied" value="applied">
+                <label for="applied">Applied</label>
+                <br/>
+                <input name="jobStatus" type="radio" id="interview" value="interview">
+                <label for="interview">Interview</label>
+                <br/>
+                <input name="jobStatus" type="radio" id="offerAccepted" value="offerAccepted">
+                <label for="offerAccepted">Offer Accepted</label>
+                <br/>
+                <input name="jobStatus" type="radio" id="declined" value="declined">
+                <label for="declined">Declined</label>
+                <br/>
+                <input name="jobStatus" type="radio" id="passed" value="passed">
+                <label for="passed">No Longer in Consideration</label>
+        </tr>
+    </table>
     <br/>
-    Company Name: <input name="jobCompany" type="text"/>
-    <br/>
-    Position Title: <input name="jobTitle" type="text"/>
-    <br/>
-    Job Req Number: <input name="jobReqNumber" type="text"/>
-    <br/>
-    Salary: <input name="jobSalary" type="text"/>
-    <br/>
-    Job Status:
-    <br/>
-    <input name="jobStatus" type="radio" id="applied" value="applied">
-    <label for="applied">Applied</label>
-    <br/>
-    <input name="jobStatus" type="radio" id="interview" value="interview">
-    <label for="interview">Interview</label>
-    <br/>
-    <input name="jobStatus" type="radio" id="offerAccepted" value="offerAccepted">
-    <label for="offerAccepted">Offer Accepted</label>
-    <br/>
-    <input name="jobStatus" type="radio" id="declined" value="declined">
-    <label for="declined">Declined</label>
-    <br/>
-    <input name="jobStatus" type="radio" id="passed" value="passed">
-    <label for="passed">No Longer in Consideration</label>
-    <br/>
-    <input type="submit" value="Save">
+    <input type="submit" value="Save"></td>
 </form>
 
 </body>

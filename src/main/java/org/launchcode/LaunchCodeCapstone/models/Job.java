@@ -1,21 +1,25 @@
 package org.launchcode.LaunchCodeCapstone.models;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Job {
     private String dateApplied;
     private String companyName;
-    private String positionTitle;
+    private String jobTitle;
     private String jobReqNumber;
     private int salary;
     private String jobStatus;
     //below items not yet included (stretch)
-   /* private String positionDetails;
-    private String userNotes; */
+   /* private String positionDetails; -- text area
+    private String userNotes; -- text area*/
 
-    public Job(String dateApplied, String companyName, String positionTitle, String jobReqNumber, int salary,
+    public Job(String dateApplied, String companyName, String jobTitle, String jobReqNumber, int salary,
                String jobStatus) {
         this.dateApplied = dateApplied;
         this.companyName = companyName;
-        this.positionTitle = positionTitle;
+        this.jobTitle = jobTitle;
         this.jobReqNumber = jobReqNumber;
         this.salary = salary;
         this.jobStatus = jobStatus;
@@ -37,12 +41,12 @@ public class Job {
         this.companyName = companyName;
     }
 
-    public String getPositionTitle() {
-        return positionTitle;
+    public String getJobTitle() {
+        return jobTitle;
     }
 
-    public void setPositionTitle(String positionTitle) {
-        this.positionTitle = positionTitle;
+    public void setJobTitle(String positionTitle) {
+        this.jobTitle = positionTitle;
     }
 
     public String getJobReqNumber() {
