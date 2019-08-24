@@ -1,6 +1,8 @@
 package org.launchcode.LaunchCodeCapstone.controllers;
 
+import dao.JobDAO;
 import org.launchcode.LaunchCodeCapstone.models.Job;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -13,23 +15,32 @@ import java.text.AttributedString;
 import java.util.Date;
 import java.util.HashMap;
 
+import static org.springframework.web.bind.annotation.RequestMethod.*;
+
 @Controller
 public class HomeController {
     static HashMap<Integer, Job> jobs;
 
+    @Autowired
+    JobDAO jobDAO;
+
     public HomeController() {
+        for (Job b : jobDAO.getAll()) {
+            jobs.put(b.getId(), b);
+        }
+    }
+    /*public HomeController() {
         jobs = new HashMap<Integer, Job>();
         jobs.put(1, new Job("2019-01-31", "ABC, Co.", "Software Engineer " +
                 "Extraordinaire", "12345-R", 999999, "accepted"));
         jobs.put(2, new Job("02/15/2019", "XYZ, Inc.", "Java Developer",
                 "54487-BR", 200015, "applied"));
-    }
+    }*/
 
-    @RequestMapping(value="", method=RequestMethod.GET)
+    @RequestMapping(value="", method=GET)
     public String loadHomePage(Model model) {
         model.addAttribute("jobs", jobs);
         model.addAttribute("count", jobs.size());
-
         return "homepage.html";
     }
 
@@ -48,10 +59,11 @@ public class HomeController {
         return "search.html";
     }
 
-    @RequestMapping(value="/addJob", method=RequestMethod.POST)
-    public String saveAddedJob(Model model, @RequestParam String dateApplied, @RequestParam String companyName,
+    @RequestMapping(value="/addJob", method= POST)
+    public String saveAddedJob(Model model, @RequestParam int id, @RequestParam String dateApplied, @RequestParam String companyName,
                                @RequestParam String jobTitle, @RequestParam String jobReqNumber, @RequestParam
                                int salary, @RequestParam String jobStatus) {
+        model.addAttribute("id", id);
         model.addAttribute("dateApplied", dateApplied);
         model.addAttribute("companyName", companyName);
         model.addAttribute("jobTitle", jobTitle);
@@ -59,14 +71,14 @@ public class HomeController {
         model.addAttribute("salary", salary);
         model.addAttribute("jobStatus", jobStatus);
 
-        jobs.put((jobs.size()+1), new Job(dateApplied, companyName, jobTitle, jobReqNumber, salary, jobStatus));
+        jobs.put((jobs.size()+1), new Job(id, dateApplied, companyName, jobTitle, jobReqNumber, salary, jobStatus));
 
         System.out.println("SAVED IT!...");
 
         return confirmSavedJob(model);
     }
 
-    @RequestMapping(value="/addJob", method=RequestMethod.GET)
+    @RequestMapping(value="/addJob", method= GET)
     public String confirmSavedJob(Model model) {
         model.addAttribute("jobs", jobs);
         model.addAttribute("count", jobs.size());
