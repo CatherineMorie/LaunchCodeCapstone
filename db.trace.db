@@ -1373,3 +1373,98 @@ INSERT INTO jobs.applied(date, company, tile, req, salary, status) VALUES (?,?, 
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
+2019-08-24 20:43:09 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE JOBS.APPLIED ADD PRIMARY KEY AUTOINCREMENT[*] (ID) "; expected "HASH, ("; SQL statement:
+alter table jobs.applied add primary key autoincrement (ID) [42001-197]
+2019-08-24 20:43:59 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE JOBS.APPLIED ADD PRIMARY KEY AUTO_INCREMENT[*] (ID) "; expected "HASH, ("; SQL statement:
+alter table jobs.applied add primary key auto_increment (ID) [42001-197]
+2019-08-24 20:44:09 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER JOBS[*].APPLIED ADD PRIMARY KEY AUTO_INCREMENT (ID) "; expected "TABLE, USER, INDEX, SCHEMA, SEQUENCE, VIEW"; SQL statement:
+alter jobs.applied add primary key auto_increment (ID) [42001-197]
+2019-08-24 20:44:24 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE JOBS.APPLIED ADD PRIMARY KEY AUTO_INCREMENT[*] (ID) "; expected "HASH, ("; SQL statement:
+alter table jobs.applied add primary key auto_increment (ID) [42001-197]
+2019-08-24 20:55:34 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "SEQUENCES" not found; SQL statement:
+SELECT last_number
+FROM   sequences
+WHERE  sequence_name = 'SYSTEM_SEQUENCE_4980F716_1FD0_464C_B291_FB4E21E631F5' [42102-197]
+2019-08-24 20:55:56 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "SEQUENCES" not found; SQL statement:
+SELECT last_number
+FROM   jobs.sequences
+WHERE  sequence_name = 'SYSTEM_SEQUENCE_4980F716_1FD0_464C_B291_FB4E21E631F5' [42102-197]
+2019-08-24 20:56:16 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "USERS_SEQUENCES" not found; SQL statement:
+SELECT last_number
+FROM   users_sequences
+WHERE  sequence_name = 'SYSTEM_SEQUENCE_4980F716_1FD0_464C_B291_FB4E21E631F5' [42102-197]
+2019-08-24 20:56:31 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "USER_SEQUENCES" not found; SQL statement:
+SELECT last_number
+FROM   user_sequences
+WHERE  sequence_name = 'SYSTEM_SEQUENCE_4980F716_1FD0_464C_B291_FB4E21E631F5' [42102-197]
+2019-08-24 20:57:27 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Sequence "SYSTEM_SEQUENCE_4980F716_1FD0_464C_B291_FB4E21E631F5" not found; SQL statement:
+alter sequence SYSTEM_SEQUENCE_4980F716_1FD0_464C_B291_FB4E21E631F5 increment by 1 [90036-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.dml.AlterSequence.update(AlterSequence.java:94)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:102)
+	at org.h2.command.Command.executeUpdate(Command.java:261)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:233)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:1077)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1386)
+	at org.h2.server.web.WebApp.query(WebApp.java:1060)
+	at org.h2.server.web.WebApp.query(WebApp.java:1036)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:170)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:124)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:161)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-08-24 20:57:39 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER SEQUENCE 'SYSTEM_SEQUENCE_4980F716_1FD0_464C_B291_FB4E21E631F5'[*] INCREMENT BY 1 "; expected "identifier"; SQL statement:
+alter sequence 'SYSTEM_SEQUENCE_4980F716_1FD0_464C_B291_FB4E21E631F5' increment by 1 [42001-197]
+2019-08-24 20:58:32 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SET SEQUENCE[*] 'SYSTEM_SEQUENCE_4980F716_1FD0_464C_B291_FB4E21E631F5' INCREMENT BY 1 "; expected "@, AUTOCOMMIT, MVCC, EXCLUSIVE, IGNORECASE, PASSWORD, SALT, MODE, COMPRESS_LOB, DATABASE, COLLATION, BINARY_COLLATION, CLUSTER, DATABASE_EVENT_LISTENER, ALLOW_LITERALS, DEFAULT_TABLE_TYPE, CREATE, HSQLDB.DEFAULT_TABLE_TYPE, PAGE_STORE, CACHE_TYPE, FILE_LOCK, DB_CLOSE_ON_EXIT, AUTO_SERVER, AUTO_SERVER_PORT, AUTO_RECONNECT, ASSERT, ACCESS_MODE_DATA, OPEN_NEW, JMX, PAGE_SIZE, RECOVER, NAMES, SCOPE_GENERATED_KEYS, SCHEMA, DATESTYLE, SEARCH_PATH, SCHEMA_SEARCH_PATH, JAVA_OBJECT_SERIALIZER, LOGSIZE, FOREIGN_KEY_CHECKS"; SQL statement:
+set sequence 'SYSTEM_SEQUENCE_4980F716_1FD0_464C_B291_FB4E21E631F5' increment by 1 [42001-197]

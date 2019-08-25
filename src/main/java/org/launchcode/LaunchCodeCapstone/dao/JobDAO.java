@@ -31,12 +31,12 @@ public class JobDAO {
                 job.getJobStatus());
     }
 
-    public void updateJob(int id, Job job){
+    public void updateJob(Job job){
         System.out.println("Updating " + job);
         jdbcTemplate.update(
                 "UPDATE jobs.applied SET date=?, company=?, title=?, req=?, salary=?, status=? where id=?",
                 job.getDateApplied(), job.getCompanyName(), job.getJobTitle(), job.getJobReqNumber(),
-                job.getSalary(), job.getJobStatus(), id);
+                job.getSalary(), job.getJobStatus());
     }
 
     public Job findById(int id){
@@ -50,13 +50,4 @@ public class JobDAO {
             return matches.get(0);
         }
     }
-
-
-    /*public class JobRowMapper implements RowMapper<Job> {
-
-        @Override
-        public Job mapRow(ResultSet resultSet, int i) throws SQLException {
-            return null;
-        }
-    }*/
 }
