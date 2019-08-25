@@ -1,11 +1,11 @@
-package dao;
+package org.launchcode.LaunchCodeCapstone.dao;
 
 import org.launchcode.LaunchCodeCapstone.models.Job;
-
+import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class JobRowMapper {
+public class JobRowMapper implements RowMapper<Job>{
 
     public Job mapRow(ResultSet resultSet, int ignoreThis) throws SQLException {
         int id;
@@ -16,9 +16,6 @@ public class JobRowMapper {
         int salary;
         String jobStatus;
 
-        /* Replace these temporary bindings by requesting
-         * columns from resultSet
-         * */
         id = resultSet.getInt("id");
         dateApplied = resultSet.getString("date");
         companyName = resultSet.getString("company");
@@ -27,11 +24,7 @@ public class JobRowMapper {
         salary = resultSet.getInt("salary");
         jobStatus = resultSet.getString("status");
 
-        /*
-        Replacement bindings go above
-         */
-
-        return new Job(id, dateApplied, companyName, jobTitle, jobReqNumber, salary, jobStatus);
+        return new Job(dateApplied, companyName, jobTitle, jobReqNumber, salary, jobStatus);
     }
 
 }

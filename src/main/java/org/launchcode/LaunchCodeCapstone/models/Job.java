@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Job {
-    private int id;
     private String dateApplied;
     private String companyName;
     private String jobTitle;
@@ -16,9 +15,8 @@ public class Job {
    /* private String positionDetails; -- text area
     private String userNotes; -- text area*/
 
-    public Job(int id, String dateApplied, String companyName, String jobTitle, String jobReqNumber, int salary,
+    public Job(String dateApplied, String companyName, String jobTitle, String jobReqNumber, int salary,
                String jobStatus) {
-        this.id = id;
         this.dateApplied = dateApplied;
         this.companyName = companyName;
         this.jobTitle = jobTitle;
@@ -26,10 +24,6 @@ public class Job {
         this.salary = salary;
         this.jobStatus = jobStatus;
     }
-
-    public int getId() { return id; }
-
-    public void setId(int id) { this.id = id; }
 
     public String getDateApplied() {
         return dateApplied;
