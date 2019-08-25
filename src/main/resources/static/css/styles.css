@@ -1,6 +1,9 @@
 body {
   font-family: sans-serif;
   text-align: center;
+  width: 75%;
+  margin-left:auto;
+   margin-right:auto;
 }
 
 .header {
@@ -23,4 +26,16 @@ div.center {
   display: block;
   margin: 0 auto;
   width: 50%
-  }
+ }
+
+ textarea {
+   width: 50%;
+   height: 200px;
+ }
+
+ div.description {
+   width: 75%;
+   margin-left:auto;
+   margin-right:auto;
+   text-align: left;
+ }

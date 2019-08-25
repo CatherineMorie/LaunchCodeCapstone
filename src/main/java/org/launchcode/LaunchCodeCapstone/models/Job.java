@@ -11,18 +11,17 @@ public class Job {
     private String jobReqNumber;
     private int salary;
     private String jobStatus;
-    //below items not yet included (stretch)
-   /* private String positionDetails; -- text area
-    private String userNotes; -- text area*/
+    private String jobDescription;
 
     public Job(String dateApplied, String companyName, String jobTitle, String jobReqNumber, int salary,
-               String jobStatus) {
+               String jobStatus, String jobDescription) {
         this.dateApplied = dateApplied;
         this.companyName = companyName;
         this.jobTitle = jobTitle;
         this.jobReqNumber = jobReqNumber;
         this.salary = salary;
         this.jobStatus = jobStatus;
+        this.jobDescription = jobDescription;
     }
 
     public String getDateApplied() {
@@ -72,5 +71,9 @@ public class Job {
     public void setJobStatus(String jobStatus) {
         this.jobStatus = jobStatus;
     }
+
+    public String getJobDescription() { return jobDescription; }
+
+    public void setJobDescription(String jobDescription) { this.jobDescription = jobDescription; }
 
 }

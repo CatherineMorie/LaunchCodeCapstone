@@ -15,6 +15,7 @@ public class JobRowMapper implements RowMapper<Job>{
         String jobReqNumber;
         int salary;
         String jobStatus;
+        String jobDescription;
 
         id = resultSet.getInt("id");
         dateApplied = resultSet.getString("date");
@@ -23,8 +24,9 @@ public class JobRowMapper implements RowMapper<Job>{
         jobReqNumber = resultSet.getString("req");
         salary = resultSet.getInt("salary");
         jobStatus = resultSet.getString("status");
+        jobDescription = resultSet.getString("description");
 
-        return new Job(dateApplied, companyName, jobTitle, jobReqNumber, salary, jobStatus);
+        return new Job(dateApplied, companyName, jobTitle, jobReqNumber, salary, jobStatus, jobDescription);
     }
 
 }
