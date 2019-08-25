@@ -3,7 +3,7 @@
 <head th:replace="fragments :: head"></head>
 <body>
 <div th:replace="fragments :: page-header"></div>
-<h1>Enter New Position Details:</h1>
+<h2>Enter New Position Details:</h2>
 <form action="/addJob" method="POST">
     <table class="center">
         <tr>
@@ -44,10 +44,9 @@
                 <label for="passed">No Longer in Consideration</label>
         </tr>
     </table>
-    <textarea name="jobDescription" placeholder=" Job Description and Notes..."></textarea>
+    <textarea name="jobDescription" placeholder="Job Description and Notes..."></textarea>
     <br/>
-    <input type="submit" value="Save"></td>
+    <input type="submit" value="Save">
 </form>
-
 </body>
 </html>

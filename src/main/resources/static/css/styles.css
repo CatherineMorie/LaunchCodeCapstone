@@ -25,12 +25,12 @@ div.center {
 .underConstruction {
   display: block;
   margin: 0 auto;
-  width: 50%
+  width: 80%
  }
 
  textarea {
-   width: 50%;
-   height: 200px;
+   width: 80%;
+   height: 250px;
  }
 
  div.description {
