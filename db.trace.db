@@ -1690,3 +1690,6 @@ ALTER TABLE jobs.applied ADD ID INT IDENTITY(1,1) [42122-197]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
+2019-08-25 12:51:53 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "JOBS" not found; SQL statement:
+SELECT * FROM jobs [42102-197]
