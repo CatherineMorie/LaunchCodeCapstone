@@ -28,17 +28,18 @@ public class JobDAO {
                 job.getJobStatus(), job.getJobDescription());
     }
 
-    public void updateJob(Job job){
+    public void updateJob(int id, Job job){
         System.out.println("Updating " + job);
         jdbcTemplate.update(
                 "UPDATE jobs.applied SET date=?, company=?, title=?, req=?, salary=?, status=?, description=? where id=?",
                 job.getDateApplied(), job.getCompanyName(), job.getJobTitle(), job.getJobReqNumber(),
-                job.getSalary(), job.getJobStatus(), job.getJobDescription());
+                job.getSalary(), job.getJobStatus(), job.getJobDescription(), id);
     }
 
     public Job findById(int id){
         List<Job> matches = jdbcTemplate.query("select * from jobs.applied where id = ?",
-                new Object[]{id}, new JobRowMapper());
+                new Object[]{id},
+                new JobRowMapper());
         if (matches.isEmpty()){
             return null;
         }

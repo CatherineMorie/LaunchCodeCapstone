@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<div th:replace="fragments :: page-header"></div>
+
+this is job.html!
+
+<form method="POST" th:action="@{'/edit/' + ${job.id}}" th:object="${job}" >
+    <table class="center">
+        <tr>
+            <td>Date Applied: </td>
+            <td><input name="dateApplied" type="text" th:field="*{dateApplied}"/></td>
+        </tr>
+        <tr>
+            <td>Company Name: </td>
+            <td><input name="companyName" type="text" th:field="*{companyName}"/></td>
+        </tr>
+        <tr>
+            <td>Position Title: </td>
+            <td><input name="jobTitle" type="text" th:field="*{jobTitle}"/></td>
+        </tr>
+        <tr>
+            <td>Job Req Number: </td>
+            <td><input name="jobReqNumber" type="text" th:field="*{jobReqNumber}"/></td>
+        </tr>
+        <tr>
+            <td>Salary: </td>
+            <td><input name="salary" type="text" th:field="*{salary}"/></td>
+        </tr>
+        <tr>
+            <td>Job Status: </td>
+            <td><select id="jobStatus" name="jobStatus" th:field="*{jobStatus}">
+                <option value="applied">Applied</option><br/>
+                <option value="interview">Interview</option><br/>
+                <option value="offerAccepted">Offer Accepted</option><br/>
+                <option value="declined">Declined</option><br/>
+                <option value="passed">No Longer In Consideration</option><br/></select></td>
+        </tr>
+    </table>
+    <input type="hidden" th:field="*{id}" />
+    <textarea name="jobDescription" placeholder="Job Description and Notes..." th:field="*{jobDescription}"></textarea>
+    <br/>
+    <input type="submit" value="Save">
+</form>
+</body>
+</html>

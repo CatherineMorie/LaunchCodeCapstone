@@ -8,6 +8,7 @@ import java.sql.SQLException;
 public class JobRowMapper implements RowMapper<Job>{
 
     public Job mapRow(ResultSet resultSet, int ignoreThis) throws SQLException {
+        int id;
         String dateApplied;
         String companyName;
         String jobTitle;
@@ -16,6 +17,7 @@ public class JobRowMapper implements RowMapper<Job>{
         String jobStatus;
         String jobDescription;
 
+        id = resultSet.getInt("id");
         dateApplied = resultSet.getString("date");
         companyName = resultSet.getString("company");
         jobTitle = resultSet.getString("title");
@@ -24,7 +26,7 @@ public class JobRowMapper implements RowMapper<Job>{
         jobStatus = resultSet.getString("status");
         jobDescription = resultSet.getString("description");
 
-        return new Job(dateApplied, companyName, jobTitle, jobReqNumber, salary, jobStatus, jobDescription);
+        return new Job(id, dateApplied, companyName, jobTitle, jobReqNumber, salary, jobStatus, jobDescription);
     }
 
 }

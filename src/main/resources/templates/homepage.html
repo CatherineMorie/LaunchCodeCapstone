@@ -12,10 +12,10 @@
                 <span th:text="${job.companyName}"></span>
                 <span> - </span>
                 <span th:text="${job.jobTitle}"></span>
-                <a href="@${job.id} + '/edit}" th:text="${job.jobReqNumber}"></a>
+                <a href="@{'/edit/' + ${job.id}}" th:text="${job.jobReqNumber}"></a>
             </li>
         </th:block>
-</ul>
+    </ul>
 </div>
 </body>
 </html>
