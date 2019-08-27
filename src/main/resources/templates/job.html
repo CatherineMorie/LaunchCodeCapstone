@@ -3,9 +3,7 @@
 <head th:replace="fragments :: head"></head>
 <body>
 <div th:replace="fragments :: page-header"></div>
-
-this is job.html!
-
+<h2>Edit Position Details:</h2>
 <form method="POST" th:action="@{'/edit/' + ${job.id}}" th:object="${job}" >
     <table class="center">
         <tr>

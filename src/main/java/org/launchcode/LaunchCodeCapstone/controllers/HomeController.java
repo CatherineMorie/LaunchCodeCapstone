@@ -78,6 +78,6 @@ public class HomeController {
     @RequestMapping(value="/edit/{id}", method=POST)
     public String editJob(@ModelAttribute Job job, @PathVariable int id) {
         jobDAO.updateJob(id, job);
-        return "homepage.html";
+        return "redirect:/";
     }
 }
