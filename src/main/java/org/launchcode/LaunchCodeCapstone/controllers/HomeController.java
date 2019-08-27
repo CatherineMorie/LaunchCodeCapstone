@@ -50,6 +50,13 @@ public class HomeController {
                                @RequestParam String jobTitle, @RequestParam String jobReqNumber, @RequestParam
                                int salary, @RequestParam String jobStatus, @RequestParam String jobDescription) {
 
+        model.addAttribute("dateApplied", dateApplied);
+        model.addAttribute("companyName", companyName);
+        model.addAttribute("jobTitle", jobTitle);
+        model.addAttribute("jobReqNumber", jobReqNumber);
+        model.addAttribute("salary", salary);
+        model.addAttribute("jobStatus", jobStatus);
+        model.addAttribute("jobDescription", jobDescription);
 
         System.out.println("SAVED IT!..." + companyName + " " + jobReqNumber);
 
